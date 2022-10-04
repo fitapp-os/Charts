@@ -42,6 +42,9 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     @objc open var borderColor = NSUIColor.black
     @objc open var borderLineWidth: CGFloat = 1.0
     
+    open var roundedCorners: UIRectCorner = .allCorners
+    open var cornerRadius: ChartBarCorner = .none
+    
     /// flag indicating if the grid background should be drawn or not
     @objc open var drawGridBackgroundEnabled = false
     
