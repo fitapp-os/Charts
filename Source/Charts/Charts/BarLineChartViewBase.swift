@@ -21,6 +21,17 @@ import AppKit
 /// Base-class of LineChart, BarChart, ScatterChart and CandleStickChart.
 open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartDataProvider, NSUIGestureRecognizerDelegate
 {
+    #if canImport(UIKit)
+    public enum ChartBarCorner {
+        /// exactly the half of the bar width
+        case perfect
+        /// custom corner radius, but not larger than the half of the bar width
+        case custom(value: CGFloat)
+        /// default value, 0
+        case none
+    }
+    #endif
+    
     /// the maximum number of entries to which values will be drawn
     /// (entry numbers greater than this value will cause value-labels to disappear)
     internal var _maxVisibleCount = 100
@@ -42,8 +53,10 @@ open class BarLineChartViewBase: ChartViewBase, BarLineScatterCandleBubbleChartD
     @objc open var borderColor = NSUIColor.black
     @objc open var borderLineWidth: CGFloat = 1.0
     
+    #if canImport(UIKit)
     open var roundedCorners: UIRectCorner = .allCorners
     open var cornerRadius: ChartBarCorner = .none
+    #endif
     
     /// flag indicating if the grid background should be drawn or not
     @objc open var drawGridBackgroundEnabled = false

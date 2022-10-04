@@ -378,7 +378,8 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 // Set the color for the currently drawn value. If the index is out of bounds, reuse colors.
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
-                        
+            
+            #if canImport(UIKit)
             if let chart = dataProvider as? BarChartView {
                 let radius: CGFloat
                 switch chart.cornerRadius {
@@ -399,6 +400,9 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
             } else {
                 context.fill(barRect)
             }
+            #else
+            context.fill(barRect)
+            #endif
             
             if drawBorder
             {
@@ -763,13 +767,14 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 
                 setHighlightDrawPos(highlight: high, barRect: barRect)
                 
+                #if canImport(UIKit)
                 if let chart = dataProvider as? BarChartView {
                     let radius: CGFloat
                     switch chart.cornerRadius {
                     case .perfect:
                         radius = barRect.width / 2
                     case .custom(let value):
-                        radius = min(value, barRect.width / 2)
+                        radius = max(value, barRect.width / 2)
                     case .none:
                         radius = 0
                     }
@@ -777,12 +782,15 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                     let bezierPath = UIBezierPath(roundedRect: barRect,
                                                   byRoundingCorners: chart.roundedCorners,
                                                   cornerRadii: CGSize(width: radius, height: radius))
-                    
+
                     context.addPath(bezierPath.cgPath)
                     context.drawPath(using: .fill)
                 } else {
                     context.fill(barRect)
                 }
+                #else
+                context.fill(barRect)
+                #endif
             }
         }
     }

@@ -264,14 +264,15 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                 // Set the color for the currently drawn value. If the index is out of bounds, reuse colors.
                 context.setFillColor(dataSet.color(atIndex: j).cgColor)
             }
-            
+    
+            #if canImport(UIKit)
             if let chart = dataProvider as? BarChartView {
                 let radius: CGFloat
                 switch chart.cornerRadius {
                 case .perfect:
                     radius = barRect.height / 2
                 case .custom(let value):
-                    radius = min(value, barRect.height / 2)
+                    radius = max(value, barRect.height / 2)
                 case .none:
                     radius = 0
                 }
@@ -279,12 +280,15 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                 let bezierPath = UIBezierPath(roundedRect: barRect,
                                               byRoundingCorners: chart.roundedCorners,
                                               cornerRadii: CGSize(width: radius, height: radius))
-                
+
                 context.addPath(bezierPath.cgPath)
                 context.drawPath(using: .fill)
             } else {
                 context.fill(barRect)
             }
+            #else
+            context.fill(barRect)
+            #endif
 
             if drawBorder
             {
