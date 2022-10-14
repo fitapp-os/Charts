@@ -40,6 +40,20 @@
 			remoteGlobalIDString = A58A4ED274A941CA248EA921;
 			remoteInfo = Charts;
 		};
+		D5E7300128F970620024F3F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E72FFC28F970620024F3F2 /* DGCharts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 65AD9E95D9ED4DC0BD73A743;
+			remoteInfo = DGCharts;
+		};
+		D5E7300328F970620024F3F2 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D5E72FFC28F970620024F3F2 /* DGCharts.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 1CBBC58C6CE1EBEE9852CE41;
+			remoteInfo = DGChartsTests;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -68,6 +82,7 @@
 		65B3F6451C73B4F5000983D0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		65B3F6481C73B4F5000983D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		65B3F64A1C73B4F5000983D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D5E72FFC28F970620024F3F2 /* DGCharts.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = DGCharts.xcodeproj; path = ../DGCharts.xcodeproj; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +120,7 @@
 		65B3F6351C73B4F5000983D0 = {
 			isa = PBXGroup;
 			children = (
+				D5E72FFC28F970620024F3F2 /* DGCharts.xcodeproj */,
 				65B3F6401C73B4F5000983D0 /* ChartsDemo-macOS */,
 				65B3F63F1C73B4F5000983D0 /* Products */,
 				03780C7E1EA29C87005C11C8 /* PlaygroundChart.playground */,
@@ -130,6 +146,15 @@
 				65B3F64A1C73B4F5000983D0 /* Info.plist */,
 			);
 			path = "ChartsDemo-macOS";
+			sourceTree = "<group>";
+		};
+		D5E72FFD28F970620024F3F2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D5E7300228F970620024F3F2 /* DGCharts.framework */,
+				D5E7300428F970620024F3F2 /* DGChartsTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -187,6 +212,10 @@
 					ProductGroup = 0630AE6A1D812840008859B0 /* Products */;
 					ProjectRef = 0630AE691D812840008859B0 /* Charts.xcodeproj */;
 				},
+				{
+					ProductGroup = D5E72FFD28F970620024F3F2 /* Products */;
+					ProjectRef = D5E72FFC28F970620024F3F2 /* DGCharts.xcodeproj */;
+				},
 			);
 			projectRoot = "";
 			targets = (
@@ -208,6 +237,20 @@
 			fileType = wrapper.cfbundle;
 			path = ChartsTests.xctest;
 			remoteRef = 0630AE721D812840008859B0 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D5E7300228F970620024F3F2 /* DGCharts.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = DGCharts.framework;
+			remoteRef = D5E7300128F970620024F3F2 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		D5E7300428F970620024F3F2 /* DGChartsTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = DGChartsTests.xctest;
+			remoteRef = D5E7300328F970620024F3F2 /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
 /* End PBXReferenceProxy section */
