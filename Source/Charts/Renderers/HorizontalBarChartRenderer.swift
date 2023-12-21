@@ -272,7 +272,7 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                 case .perfect:
                     radius = barRect.height / 2
                 case .custom(let value):
-                    radius = max(value, barRect.height / 2)
+                    radius = min(value, barRect.height / 2)
                 case .none:
                     radius = 0
                 }

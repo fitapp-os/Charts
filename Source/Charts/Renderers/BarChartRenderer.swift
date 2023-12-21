@@ -386,7 +386,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                 case .perfect:
                     radius = barRect.width / 2
                 case .custom(let value):
-                    radius = max(value, barRect.width / 2)
+                    radius = min(value, barRect.width / 2)
                 case .none:
                     radius = 0
                 }
@@ -774,7 +774,7 @@ open class BarChartRenderer: BarLineScatterCandleBubbleRenderer
                     case .perfect:
                         radius = barRect.width / 2
                     case .custom(let value):
-                        radius = max(value, barRect.width / 2)
+                        radius = min(value, barRect.width / 2)
                     case .none:
                         radius = 0
                     }
