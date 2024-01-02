@@ -19,7 +19,11 @@ private struct ItemDef {
 class DemoListViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-    private var itemDefs = [ItemDef(title: "Line Chart",
+    private var itemDefs = [
+                    ItemDef(title: "Fitapp Pace Chart",
+                            subtitle: "How pace is presented in Fitapp with a horizontal bar chart.",
+                            class: FitappPaceDemoViewController.self),
+                    ItemDef(title: "Line Chart",
                             subtitle: "A simple demonstration of the linechart.",
                             class: LineChart1ViewController.self),
                     ItemDef(title: "Line Chart (Dual YAxis)",

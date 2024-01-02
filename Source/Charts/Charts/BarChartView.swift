@@ -183,4 +183,8 @@ open class BarChartView: BarLineChartViewBase, BarChartDataProvider
     
     /// `true` if drawing shadows (maxvalue) for each bar is enabled, `false` ifnot
     open var isDrawBarShadowEnabled: Bool { return drawBarShadowEnabled }
+    
+    open var yAxisLabelPosition: YAxis.LabelPosition { leftAxis.labelPosition }
+    
+    open var xAxisLabelPosition: XAxis.LabelPosition { xAxis.labelPosition }
 }

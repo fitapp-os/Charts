@@ -422,7 +422,8 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                             negOffset = -negOffset - valueTextWidth
                         }
                         
-                        if dataSet.isDrawValuesEnabled
+                        // do not draw label if inside chart and there is not enough space
+                        if dataSet.isDrawValuesEnabled, (dataProvider.yAxisLabelPosition != .insideChart || rect.width > valueTextWidth)
                         {
                             drawValue(
                                 context: context,

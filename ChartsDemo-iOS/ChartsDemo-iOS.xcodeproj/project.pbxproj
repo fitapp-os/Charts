@@ -136,6 +136,8 @@
 		D5E7300828F9707E0024F3F2 /* DGCharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5E7300628F9707E0024F3F2 /* DGCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D5E7300A28F9709F0024F3F2 /* DGCharts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5E7300928F9709E0024F3F2 /* DGCharts.framework */; };
 		D5E7300B28F9709F0024F3F2 /* DGCharts.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D5E7300928F9709E0024F3F2 /* DGCharts.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D5FB03F32B4420C400B180F8 /* FitappPaceDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5FB03F22B4420C400B180F8 /* FitappPaceDemoViewController.swift */; };
+		D5FB04072B4422E000B180F8 /* FitappPaceDemoViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5FB04062B4422E000B180F8 /* FitappPaceDemoViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -294,6 +296,8 @@
 		B64D06EA1FB199130067418D /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D5E7300628F9707E0024F3F2 /* DGCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DGCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5E7300928F9709E0024F3F2 /* DGCharts.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = DGCharts.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D5FB03F22B4420C400B180F8 /* FitappPaceDemoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FitappPaceDemoViewController.swift; sourceTree = "<group>"; };
+		D5FB04062B4422E000B180F8 /* FitappPaceDemoViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FitappPaceDemoViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +380,7 @@
 				225B364C1F6EBA410005B3D5 /* ScatterChartViewController.swift */,
 				225B36591F6EBA410005B3D5 /* SinusBarChartViewController.swift */,
 				225B364D1F6EBA410005B3D5 /* StackedBarChartViewController.swift */,
+				D5FB03F22B4420C400B180F8 /* FitappPaceDemoViewController.swift */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -417,6 +422,7 @@
 				5BEAED171ABBFB340013F194 /* ScatterChartViewController.xib */,
 				5BEAED3F1ABC1AC60013F194 /* SinusBarChartViewController.xib */,
 				5BEAED1A1ABBFB340013F194 /* StackedBarChartViewController.xib */,
+				D5FB04062B4422E000B180F8 /* FitappPaceDemoViewController.xib */,
 			);
 			path = Demos;
 			sourceTree = "<group>";
@@ -671,6 +677,7 @@
 				225B36751F6EBA640005B3D5 /* BarChartViewController.xib in Resources */,
 				225B367F1F6EBA640005B3D5 /* LineChartFilledViewController.xib in Resources */,
 				225B36801F6EBA640005B3D5 /* LineChartTimeViewController.xib in Resources */,
+				D5FB04072B4422E000B180F8 /* FitappPaceDemoViewController.xib in Resources */,
 				225B36811F6EBA640005B3D5 /* MultipleBarChartViewController.xib in Resources */,
 				225B367D1F6EBA640005B3D5 /* LineChart1ViewController.xib in Resources */,
 				068A9B1B1FBBF366003CF1AD /* radar_marker@3x.png in Resources */,
@@ -746,6 +753,7 @@
 				225B366C1F6EBA470005B3D5 /* HorizontalBarChartViewController.swift in Sources */,
 				225B36401F6EBA1D0005B3D5 /* XYMarkerView.swift in Sources */,
 				225B36421F6EBA1D0005B3D5 /* RadarMarkerView.swift in Sources */,
+				D5FB03F32B4420C400B180F8 /* FitappPaceDemoViewController.swift in Sources */,
 				225B366B1F6EBA470005B3D5 /* RadarChartViewController.swift in Sources */,
 				225B36611F6EBA470005B3D5 /* LineChart1ViewController.swift in Sources */,
 				225B36691F6EBA470005B3D5 /* PieChartViewController.swift in Sources */,

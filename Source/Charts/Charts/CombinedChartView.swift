@@ -203,6 +203,10 @@ open class CombinedChartView: BarLineChartViewBase, CombinedChartDataProvider
     /// `true` the highlight is be full-bar oriented, `false` ifsingle-value
     open var isHighlightFullBarEnabled: Bool { return highlightFullBarEnabled }
     
+    open var yAxisLabelPosition: YAxis.LabelPosition { leftAxis.labelPosition }
+    
+    open var xAxisLabelPosition: XAxis.LabelPosition { xAxis.labelPosition }
+    
     // MARK: - ChartViewBase
     
     /// draws all MarkerViews on the highlighted positions
