@@ -12,7 +12,7 @@ import DGCharts
 final class FitappPaceDemoViewController: UIViewController {
     @IBOutlet private var barChartView: HorizontalBarChartView!
     
-    private let paceValues: [Double] = [38, 22, 12, 22, 60, 80, 115, 524]
+    private let paceValues: [Double] = [1, 0, 12, 476, 60, 12, 115, 524]
     private let distanceValues: [Double] = [8.5, 8, 7, 5, 4, 3, 2, 1]
     
     required init?(coder aDecoder: NSCoder) {

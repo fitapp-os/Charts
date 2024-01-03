@@ -247,7 +247,21 @@ open class HorizontalBarChartRenderer: BarChartRenderer
 
         for j in buffer.rects.indices
         {
-            let barRect = buffer.rects[j]
+            var barRect = buffer.rects[j]
+            
+            if dataProvider.yAxisLabelPosition == .insideChart, let e = dataSet.entryForIndex(j) as? BarChartDataEntry {
+                let val = e.y
+                let valueText = dataSet.valueFormatter.stringForValue(
+                    val,
+                    entry: e,
+                    dataSetIndex: j,
+                    viewPortHandler: viewPortHandler)
+                
+                let valueTextWidth = valueText.size(withAttributes: [.font: dataSet.valueFont]).width + 10
+                // make sure value text is always displayed
+                barRect.size.width = max(barRect.width, valueTextWidth)
+            }
+            
             
             if (!viewPortHandler.isInBoundsTop(barRect.origin.y + barRect.size.height))
             {
@@ -385,7 +399,7 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                     {
                         guard let e = dataSet.entryForIndex(j) as? BarChartDataEntry else { continue }
                         
-                        let rect = buffer.rects[j]
+                        var rect = buffer.rects[j]
                         
                         let y = rect.origin.y + rect.size.height / 2.0
                         
@@ -413,6 +427,12 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                         
                         // calculate the correct offset depending on the draw position of the value
                         let valueTextWidth = valueText.size(withAttributes: [.font: valueFont]).width
+                        
+                        if dataProvider.yAxisLabelPosition == .insideChart {
+                            // make sure value text is always displayed
+                            rect.size.width = max(rect.width, valueTextWidth + 10)
+                        }
+                        
                         posOffset = (drawValueAboveBar ? valueOffsetPlus : -(valueTextWidth + valueOffsetPlus))
                         negOffset = (drawValueAboveBar ? -(valueTextWidth + valueOffsetPlus) : valueOffsetPlus) - rect.size.width
                         
@@ -422,8 +442,7 @@ open class HorizontalBarChartRenderer: BarChartRenderer
                             negOffset = -negOffset - valueTextWidth
                         }
                         
-                        // do not draw label if inside chart and there is not enough space
-                        if dataSet.isDrawValuesEnabled, (dataProvider.yAxisLabelPosition != .insideChart || rect.width > valueTextWidth)
+                        if dataSet.isDrawValuesEnabled
                         {
                             drawValue(
                                 context: context,
